@@ -1,0 +1,24 @@
+mon=input('Enter month:');
+day=input('Enter day:');
+year=input('Enter year:');
+if mod(year,400)==0
+  leap_day=1;
+elseif mod(year,100)==0
+  leap_day=0;
+elseif mod(year,4)==0
+  leap_day=1;
+else
+  leap_day=0;
+endif
+day_of_day=day;
+for ii=1:mon-1;
+  switch(ii)
+  case{1,3,5,7,8,10,12}
+  day_of_day=day_of_day+31;
+  case{4,6,9,11}
+  day_of_day=day_of_day+30;
+  case 2
+    day_of_day=day_of_day+28+leap_day;
+end
+endfor
+fprintf('%4d/%2d/%2d is day of year %d\n',year,mon,day,day_of_day);
