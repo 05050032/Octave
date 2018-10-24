@@ -1,0 +1,26 @@
+函式1:
+
+function [r,theta]=rect2polar(x,y)
+    r=sqrt(x.^2+y.^2);
+  theta=180/pi*atan2(y,x);
+endfunction
+
+
+
+函式2:
+
+function [x,y]=polar2rect(r,theta)
+  x=r*cos(theta*pi/180);
+  y=r*sin(theta*pi/180);
+endfunction
+
+
+
+輸出結果:
+
+>>[r,theta]=rect2polar(4,3)  //要自己輸入去呼叫
+r =  5
+theta =  36.870
+>> [x,y]=polar2rect(5,36.87)
+x =  4.0000
+y =  3.0000
