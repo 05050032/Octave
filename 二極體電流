@@ -1,0 +1,19 @@
+i0=2.0e-6;
+q=1.602e-19;
+k=1.38e-23;
+temp_f=[75 100 125];
+vd=-1.0:0.01:0.6;
+for ii=1:length(temp_f)
+  temp_k=(5/9)*(temp_f(ii)-32)+237.15;
+  id=i0.*(exp((q*vd)/(k*temp_k))-1);
+  if ii==1
+    plot(vd,id,'b-','LineWidth',2);
+    hold on;
+  elseif ii==2
+    plot(vd,id,'k--','LineWidth',2);
+  elseif ii==3
+  plot(vd,id,'r:','LineWidth',2);
+  hold off;
+  endif
+endfor
+legend('75F','100F','125F')
