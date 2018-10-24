@@ -1,0 +1,9 @@
+x=input('Enter number : ');
+prod=1;nvals=0;
+while x>0
+  prod=prod*x;
+  nvals=nvals+1;
+  x=input('Enter next number : ');
+endwhile
+g=prod^(1/nvals);
+fprintf('The geometric mean is %.4f\n',g);
